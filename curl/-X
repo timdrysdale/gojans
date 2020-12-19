@@ -1,0 +1,240 @@
+== Info: Could not resolve host: POST
+== Info:   Trying 3.9.156.80:443...
+== Info: TCP_NODELAY set
+== Info: Connected to jans.practable.io (3.9.156.80) port 443 (#1)
+== Info: ALPN, offering http/1.1
+== Info: successfully set certificate verify locations:
+== Info:   CAfile: /home/tim/anaconda3/ssl/cacert.pem
+  CApath: none
+=> Send SSL data, 5 bytes (0x5)
+0000: .....
+== Info: TLSv1.3 (OUT), TLS handshake, Client hello (1):
+=> Send SSL data, 512 bytes (0x200)
+0000: .......$;.a&3.m.`..../..{C.P?..!Xu.*.[ ".q..KJ6..|..q&.<...?..A[
+0040: ...|".d.>.......,.0.........+./...$.(.k.#.'.g.....9.....3.....=.
+0080: <.5./.....u.........jans.practable.io........................3t.
+00c0: ........http/1.1.........1.....0................................
+0100: .................+............-.....3.&.$... ;.........w.#...N..
+0140: ....f...gWY.<...................................................
+0180: ................................................................
+01c0: ................................................................
+<= Recv SSL data, 5 bytes (0x5)
+0000: ....p
+== Info: TLSv1.3 (IN), TLS handshake, Server hello (2):
+<= Recv SSL data, 112 bytes (0x70)
+0000: ...l...P3?>..K.5...u.~U..&jo.U.......i ......#.f.@.._....T.Y.}[.
+0040: ..D.p...0..$........................http/1.1....
+<= Recv SSL data, 5 bytes (0x5)
+0000: .....
+== Info: TLSv1.2 (IN), TLS handshake, Certificate (11):
+<= Recv SSL data, 7408 bytes (0x1cf0)
+0000: ..........0...0.............5.j..K......H.0...*.H........0..1.0.
+0040: ..U....GB1.0...U....Greater Manchester1.0...U....Salford1.0...U.
+0080: ...Sectigo Limited1705..U....Sectigo RSA Domain Validation Secur
+00c0: e Server CA0...200409000000Z..210409235959Z0.1.0...U....*.practa
+0100: ble.io0.."0...*.H.............0.............ON.P.....E.@.cgR...Y
+0140: .J..*.......1...8...:..j.*.K........t..S$..*x...........1.`.$...
+0180: .l.A.|.z.j.Rt..7.)J......U..a.6h........hf5..O...^.W...a.*Hc..q.
+01c0: ..m......4}....fp...V........]..x.......r...py...va8.5.j6<..\.4=
+0200: ..%..4.......4....7."...:.......'...N...........0..0...U.#..0..
+0240: ...^.T...w.........a.0...U............V....%W..o..Z.0...U.......
+0280: ....0...U.......0.0...U.%..0...+.........+.......0I..U. .B0@04..
+02c0: +.....1....0%0#..+.........https://sectigo.com/CPS0...g.....0...
+0300: .+........x0v0O..+.....0..Chttp://crt.sectigo.com/SectigoRSADoma
+0340: inValidationSecureServerCA.crt0#..+.....0...http://ocsp.sectigo.
+0380: com0'..U... 0...*.practable.io..practable.io0.....+.....y.......
+03c0: .....v.}>.....Uh$....R.y+..x..j.h.~".....q\r.V.....G0E. +...0.f
+0400: .Y$...W.......!.:.q.9,.r..!........V..N@8..#...i0..Q..[....P.u..
+0440:  .....l.s...",...M^lO.=a.N/XM.....q\r.}.....F0D. ......S.Dc....n
+0480: zu!...^/w...Pi..1. ...[.[E...D..{5z._..Q..*.h..f.5.0...*.H......
+04c0: .......~..<..c}C..=..<.D......[.w..WIOb..HiML.|...v.h..+.k....J
+0500: ..0y..Q8).U0H.:u.....M{..X~.ji....Y..g.#....w.r...k+t(.'\.s.*G.B
+0540: RcL..1c-............i.............5.._..6x....&..q....F..).*o.\W
+0580: .h$W.F..]o..i..CH.."... .@..d.u....|/.7{#P[.?.?.$.....E.Tk...."
+05c0: .u.)......0...0..........}[Q&.v...t...S..0...*.H........0..1.0..
+0600: .U....US1.0...U....New Jersey1.0...U....Jersey City1.0...U....Th
+0640: e USERTRUST Network1.0,..U...%USERTrust RSA Certification Author
+0680: ity0...181102000000Z..301231235959Z0..1.0...U....GB1.0...U....Gr
+06c0: eater Manchester1.0...U....Salford1.0...U....Sectigo Limited1705
+0700: ..U....Sectigo RSA Domain Validation Secure Server CA0.."0...*.H
+0740: .............0.........s3..< ....E..>..?.A.20..l.......-?.M.....
+0780: b...Hy...N..2%.....P?.L.@*.9......2A..&.#z. ... .<.Do.u..@.2...
+07c0: ..#>....o]Q.j.i.O.ri...Lm.....~.......7x...4.V.X....d[.7...(h.V.
+0800: ..\......$..0......z...B......J......@..o.BJd..0.....'Z..X......
+0840: c.oV...`4.t........._.........n0..j0...U.#..0...Sy.Z.+J.T.......
+0880: ..f.0...U........^.T...w.........a.0...U...........0...U.......0
+08c0: .......0...U.%..0...+.........+.......0...U. ..0.0...U. .0...g..
+0900: ...0P..U...I0G0E.C.A.?http://crl.usertrust.com/USERTrustRSACerti
+0940: ficationAuthority.crl0v..+........j0h0?..+.....0..3http://crt.us
+0980: ertrust.com/USERTrustRSAAddTrustCA.crt0%..+.....0...http://ocsp.
+09c0: usertrust.com0...*.H.............2.a..H.O..GM..x......o..p.R.13.
+0a00: WR.1.k..T...@.h...|....U....6...9Q.F......~I.*6...h9z..NVo.{;...
+0a40: ...w...8..._~...FH.h......4.g.8f.^....(:.@'.rN).!<|....,.1D.....
+0a80: .ihw|.....68.S9..4.......$7.#.x.....Gdb9"....."..fD$&..2.......>
+0ac0: /...F.c.......!.......&.....WBm..3.9...A8..X..[..}.x.......i.&..
+0b00: ...[.... ...E......7.).....8@.B....{...hb.......O..i..`.d*.1....
+0b40: :..&..{......8.Y6..t...^..d.....n..-.....X-..%d.^u.8..ZF..Q....
+0b80: .5k.j{......d.......Q....y...@..[..<.`*....B...F..i......rKGn...
+0bc0: 2(c.C..2>..K.#..)A+....-..9H<.Z...{0..w0.._.........(p[....6c..
+0c00: aC60...*.H........0o1.0...U....SE1.0...U....AddTrust AB1&0$..U..
+0c40: ..AddTrust External TTP Network1"0 ..U....AddTrust External CA R
+0c80: oot0...000530104838Z..200530104838Z0..1.0...U....US1.0...U....Ne
+0cc0: w Jersey1.0...U....Jersey City1.0...U....The USERTRUST Network1.
+0d00: 0,..U...%USERTrust RSA Certification Authority0.."0...*.H.......
+0d40: ......0..........e.6.......W.v..'.L.P.a.. M.-d......=..........{
+0d80: 7(.+G.9..:.._..}..cB.v..;+...o... ..>..t.....bd......j."<......
+0dc0: {......Q..gF.Q...T?.3.~l......Q.5..f.rg.!f...x..P:......L....5.W
+0e00: Z....=.,..T....:M.L..\... =."4.~;hf.D..NFS.3`...S7.sC.2.S....tN
+0e40: i.k.`.......2...;Qx.g..=V...i....%&k3m.nG.sC.~..f.)|2.cU.....T0.
+0e80: ...}7..]:l5\.A....I.......b..f.%.....?.9......L.|.k..^....g.....
+0ec0: [..L..[...s.#;-..5Ut.I.IX..6.Q...&}.M....C&..A_@.DD...W..P.WT.>
+0f00: .tc/.Pe..XB.C.L..%GY.....&FJP....x..g...W...c..b.._U..\.(..%9..+
+0f40: ..L...?.R.../..........0..0...U.#..0......z4.&...&T....$.T.0...U
+0f80: ......Sy.Z.+J.T.........f.0...U...........0...U.......0....0...U
+0fc0: . ..0.0...U. .0D..U...=0;09.7.5.3http://crl.usertrust.com/AddTru
+1000: stExternalCARoot.crl05..+........)0'0%..+.....0...http://ocsp.us
+1040: ertrust.com0...*.H..............e.7...^.....w.<.......&...ju..y.
+1080: .R`.)........v......F..W......."l3w.{2.n..Z.A:.$....;.%$...*u..p
+10c0: A?|.c6!..F.`...g...~...cg..g.k....nC}...l...S.}.....-.FrW5...F.n
+1100: m7...#...n@..)V._._.S..Oa.."..V...4.&.{..h?.<.8........qm@B...@.
+1140: +.e.Hy...c..Ou..|..........!......0...0............m0...Q...d.5.
+1180: -0...*.H........0..1.0...U....US1.0...U....New Jersey1.0...U....
+11c0: Jersey City1.0...U....The USERTRUST Network1.0,..U...%USERTrust 
+1200: RSA Certification Authority0...100201000000Z..380118235959Z0..1.
+1240: 0...U....US1.0...U....New Jersey1.0...U....Jersey City1.0...U...
+1280: .The USERTRUST Network1.0,..U...%USERTrust RSA Certification Aut
+12c0: hority0.."0...*.H.............0..........e.6.......W.v..'.L.P.a.
+1300: . M.-d......=..........{7(.+G.9..:.._..}..cB.v..;+...o... ..>..t
+1340: .....bd......j."<......{......Q..gF.Q...T?.3.~l......Q.5..f.rg.
+1380: !f...x..P:......L....5.WZ....=.,..T....:M.L..\... =."4.~;hf.D..
+13c0: NFS.3`...S7.sC.2.S....tNi.k.`.......2...;Qx.g..=V...i....%&k3m.n
+1400: G.sC.~..f.)|2.cU.....T0....}7..]:l5\.A....I.......b..f.%.....?.9
+1440: ......L.|.k..^....g.....[..L..[...s.#;-..5Ut.I.IX..6.Q...&}.M..
+1480: ..C&..A_@.DD...W..P.WT.>.tc/.Pe..XB.C.L..%GY.....&FJP....x..g...
+14c0: W...c..b.._U..\.(..%9..+..L...?.R.../........B0@0...U......Sy.Z.
+1500: +J.T.........f.0...U...........0...U.......0....0...*.H.........
+1540: ....\.|....}A.e.s.R........C....UW...R<'..(..:.7.v.SP....kN..!O
+1580: ..Ub..i............KU*. mUx).._0\K$.U.$.n^*+..M...8...C...`....
+15c0: ....^..jYm.?....E...d...s(...$N.X...E."../...Ea...o.vr...6.....q
+1600: ...o.l.qb....r..g.....Lr4...q..q...l.<.]e..W..Ck...Mf.Q.......q.
+1640: ..I..5q..'...a.&.o.g%!].....h.;....g...Qt......x.\yJ`..@.L7*,..
+1680: b..].6[..%%......w.?....=...?...o.-........5..g..J.(.#..\'k..O.
+16c0: .....Y..RA...G..dAU|.Y...b....Z(t...........6t2.(......L.....i.G
+1700: F./....cDp...-3...{.p..>..@(.....].".R.X...1C......<Cj....}=..b.
+1740: .......0...0..........H^6@/..G...^atml....0...*.H........0b1.0..
+1780: .U....GB1.0...U....Edinburgh1.0...U....Edinburgh1.0...U....pract
+17c0: able1.0...U....*.practable.io0...191110183756Z..201109183756Z0b1
+1800: .0...U....GB1.0...U....Edinburgh1.0...U....Edinburgh1.0...U....p
+1840: ractable1.0...U....*.practable.io0.."0...*.H.............0......
+1880: ....ixv.....6.....}....M..l.{../iG.Uy.M9.#..7.J.`....3...sq R...
+18c0: ..*&S:..-.#EZ.A...G k..9....S..w..9."..=k..u..m.....Ry...s..)Z.
+1900: .....?pa..~.7Ue......3.E.A....X..ks.@U.51.J......f\..:.,...^)...
+1940: .P.-F....Y?j..L..YF:.p}-x....t. .2+.Y.S......3..hT.=...q...z.E.
+1980: .....2.^..UQL..*..-.....@I}.9{.I2...Eb....#"...}...l.D.j.9z.....
+19c0: ..@...].U.a.i;`?QU...)C.go.w....b.V....g.<......P*Y..m....V=..+
+1a00: ../,>.D...a......R$0..(;hG*....G......{..%........ok..#>.U.N_...
+1a40: ..<.......V.v......W.....2*..H......6hy....Yz..Un,B<..&L".e...p.
+1a80: .y......S0Q0...U......^.d....;.Z<4<...'$..0...U.#..0...^.d....;.
+1ac0: Z<4<...'$..0...U.......0....0...*.H.............JMr9....]...yx.U
+1b00: -..:T..Y.[...MG...Z:......K.f................n..pB.......%`C.N.}
+1b40: 6..3...w.J....y.....w4..?..9...Z."-gDUg....h..svJ..k.#..Qu<O..P
+1b80: .~.u.#k...c......Q~^........V.....E7b9...f..{.U.....E...N.?}....
+1bc0: +Y...a....I-<....V@|.i....C0...s-...&&om,m.....fXX..G...7.7....h
+1c00: .....6\/...........rk.U^.j../.:?..Y#..Z.?..s{;0".R...]..w.M...R
+1c40: ".>.....C...=$1t...>.x..a.......o.._....+....3..q.iD]c.y......L.
+1c80: .>.^..........AE.h....;....x....R9...*_.]j..F...%2.6..?.%.DJ..^o
+1cc0: ...a......)..U....56..B5!5..~...O.T.\..Z3...[a..
+<= Recv SSL data, 5 bytes (0x5)
+0000: ....,
+== Info: TLSv1.2 (IN), TLS handshake, Server key exchange (12):
+<= Recv SSL data, 300 bytes (0x12c)
+0000: ...(... .......y.y..z.W.(|3.I.......R{.)....).1...%..r..+A ~....
+0040: ..........[.....r..9.XD............).y...J.$9k......U./...}..GOR
+0080: b|P..V..Un7..%...h.>.;.]..y...7..X...l.........../4.....K.h]{..
+00c0: @@.W..*...]...  .%......k... jDE9T..2.......r......%..sKI..^.".
+0100: V.Z..MK.w...].gT6)...2..ks&.h..i..8....@..Y.
+<= Recv SSL data, 5 bytes (0x5)
+0000: .....
+== Info: TLSv1.2 (IN), TLS handshake, Server finished (14):
+<= Recv SSL data, 4 bytes (0x4)
+0000: ....
+=> Send SSL data, 5 bytes (0x5)
+0000: ....%
+== Info: TLSv1.2 (OUT), TLS handshake, Client key exchange (16):
+=> Send SSL data, 37 bytes (0x25)
+0000: ...! .j6#..2q..i...P...w....&>.....C!
+=> Send SSL data, 5 bytes (0x5)
+0000: .....
+== Info: TLSv1.2 (OUT), TLS change cipher, Change cipher spec (1):
+=> Send SSL data, 1 bytes (0x1)
+0000: .
+=> Send SSL data, 5 bytes (0x5)
+0000: ....(
+== Info: TLSv1.2 (OUT), TLS handshake, Finished (20):
+=> Send SSL data, 16 bytes (0x10)
+0000: ......f......c.w
+<= Recv SSL data, 5 bytes (0x5)
+0000: .....
+<= Recv SSL data, 5 bytes (0x5)
+0000: ....(
+== Info: TLSv1.2 (IN), TLS handshake, Finished (20):
+<= Recv SSL data, 16 bytes (0x10)
+0000: ...............(
+== Info: SSL connection using TLSv1.2 / ECDHE-RSA-AES256-GCM-SHA384
+== Info: ALPN, server accepted to use http/1.1
+== Info: Server certificate:
+== Info:  subject: CN=*.practable.io
+== Info:  start date: Apr  9 00:00:00 2020 GMT
+== Info:  expire date: Apr  9 23:59:59 2021 GMT
+== Info:  subjectAltName: host "jans.practable.io" matched cert's "*.practable.io"
+== Info:  issuer: C=GB; ST=Greater Manchester; L=Salford; O=Sectigo Limited; CN=Sectigo RSA Domain Validation Secure Server CA
+== Info:  SSL certificate verify ok.
+=> Send SSL data, 5 bytes (0x5)
+0000: .....
+=> Send header, 170 bytes (0xaa)
+0000: POST /oxauth/restv1/token HTTP/1.1
+0024: Host: jans.practable.io
+003d: User-Agent: curl/7.65.3
+0056: Accept: */*
+0063: Content-Type: application/x-www-form-urlencoded
+0094: Content-Length: 81
+00a8: 
+=> Send data, 81 bytes (0x51)
+0000: grant_type=client_credentials&client_id=sometestclientid&client_
+0040: secret=somesecret
+== Info: upload completely sent off: 81 out of 81 bytes
+<= Recv SSL data, 5 bytes (0x5)
+0000: .....
+== Info: Mark bundle as not supporting multiuse
+<= Recv header, 27 bytes (0x1b)
+0000: HTTP/1.1 401 Unauthorized
+<= Recv header, 37 bytes (0x25)
+0000: Date: Sat, 19 Dec 2020 17:28:03 GMT
+<= Recv header, 32 bytes (0x20)
+0000: Server: Apache/2.4.41 (Ubuntu)
+<= Recv header, 33 bytes (0x21)
+0000: X-Xss-Protection: 1; mode=block
+<= Recv header, 33 bytes (0x21)
+0000: X-Content-Type-Options: nosniff
+<= Recv header, 64 bytes (0x40)
+0000: Strict-Transport-Security: max-age=31536000; includeSubDomains
+<= Recv header, 40 bytes (0x28)
+0000: WWW-Authenticate: Basic realm="oxAuth"
+<= Recv header, 51 bytes (0x33)
+0000: Content-Type: application/json;charset=iso-8859-1
+<= Recv header, 21 bytes (0x15)
+0000: Content-Length: 599
+<= Recv header, 2 bytes (0x2)
+0000: 
+<= Recv data, 599 bytes (0x257)
+0000: {.    "error_description": "Client authentication failed (e.g. u
+0040: nknown client, no client authentication included, or unsupported
+0080:  authentication method). The authorization server MAY return an 
+00c0: HTTP 401 (Unauthorized) status code to indicate which HTTP authe
+0100: ntication schemes are supported. If the client attempted to auth
+0140: enticate via the Authorization request header field, the authori
+0180: zation server MUST respond with an HTTP 401 (Unauthorized) statu
+01c0: s code, and include the WWW-Authenticate response header field m
+0200: atching the authentication scheme used by the client.",.    "err
+0240: or": "invalid_client".}
+== Info: Connection #1 to host jans.practable.io left intact
