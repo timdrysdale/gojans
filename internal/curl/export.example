@@ -1,0 +1,5 @@
+#!/bin/sh
+export host=your.host.io
+export client_id=yourclientidxv61c86
+export client_secret=yourclientsecretasdf2326
+export client_name=testclient
