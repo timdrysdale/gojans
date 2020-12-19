@@ -15,7 +15,7 @@ import (
 	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/timdrysdale/gojans/src/jansAuth/models"
+	"github.com/timdrysdale/gojans/pkg/jansAuth/models"
 )
 
 // NewPutHostRsrcResourceSetRsidParams creates a new PutHostRsrcResourceSetRsidParams object

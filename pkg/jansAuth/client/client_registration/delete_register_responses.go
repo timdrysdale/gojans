@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/timdrysdale/gojans/src/jansAuth/models"
+	"github.com/timdrysdale/gojans/pkg/jansAuth/models"
 )
 
 // DeleteRegisterReader is a Reader for the DeleteRegister structure.

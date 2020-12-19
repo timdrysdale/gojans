@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/timdrysdale/gojans/src/jansAuth/models"
+	"github.com/timdrysdale/gojans/pkg/jansAuth/models"
 )
 
 // PutRegisterReader is a Reader for the PutRegister structure.
