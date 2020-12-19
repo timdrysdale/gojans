@@ -465,7 +465,7 @@ paths:
           schema:
             $ref: '#/definitions/ErrorResponse'
     put:
-      description: Updates Client Metadata for a registered client.
+      description: Update Client Metadata for a registered client.
       summary: put-register
       tags:
       - Registration
@@ -2346,7 +2346,7 @@ definitions:
         type: string
       software_version:
         description: Specifies a version identifier string for the client software identified by 'software_id'. The value of the 'software_version' should change on any update to the client software identified by the same 'software_id'.
-        example: 2.1
+        example: '2.1'
         type: string
       software_statement:
         description: specifies a software statement containing client metadata values about the client software as claims. This is a string value containing the entire signed JWT.
@@ -2753,7 +2753,7 @@ definitions:
         type: string
       software_version:
         description: Specifies a version identifier string for the client software identified by 'software_id'. The value of the 'software_version' should change on any update to the client software identified by the same 'software_id'.
-        example: 2.1
+        example: '2.1'
         type: string
       software_statement:
         description: specifies a software statement containing client metadata values about the client software as claims. This is a string value containing the entire signed JWT.
@@ -2977,8 +2977,8 @@ definitions:
       auth_time:
         description: specifies the time at which session was authenticated.
         example: 100000000
-        type: string
-        format: date
+        type: integer
+        format: int32
       custom_state:
         type: string
   TokenResponse:
