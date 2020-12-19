@@ -49,9 +49,60 @@ Exporting as openAPI2.0 in yaml format, go-swagger throws this error
 unexpected map key type, got: bool
 ```
 This is a [known issue](https://github.com/go-swagger/go-swagger/issues/1209) with 'n' being a reserved word in YAML for boolean false.
-````
+```
 { Y, true, Yes, ON  }    : Boolean true
 { n, FALSE, No, off }    : Boolean false
+```
+
+This line can be found by looking for isolated keys named n or y, such as with
+```
+cat oxAuthModifiedApimaticOpenAPI20.yaml | grep -n '^[[:blank:]]*n:'
+```
+
+This also threw up a 'y' which needed corrected a few lines below.
+
+```
+$ swagger validate oxAuthModifiedApimaticOpenAPI20.yaml
+2020/12/19 20:53:31 
+The swagger spec at "oxAuthModifiedApimaticOpenAPI20.yaml" is valid against swagger specification 2.0
+2020/12/19 20:53:31 
+The swagger spec at "oxAuthModifiedApimaticOpenAPI20.yaml" showed up some valid but possibly unwanted constructs.
+2020/12/19 20:53:31 See warnings below:
+2020/12/19 20:53:31 - WARNING: example value for body in body does not validate its schema
+2020/12/19 20:53:31 - WARNING: body.software_version.example in body must be of type string: "number"
+2020/12/19 20:53:31 - WARNING: in operation "session_status", example value in response 200 does not validate its schema
+2020/12/19 20:53:31 - WARNING: 200.auth_time.example in body must be of type date: "float64"
+2020/12/19 20:53:31 - WARNING: in operation "get-register", example value in response 200 does not validate its schema
+2020/12/19 20:53:31 - WARNING: 200.software_version.example in body must be of type string: "number"
+2020/12/19 20:53:31 - WARNING: definitions.ClientResponse.software_version.example in body must be of type string: "number"
+2020/12/19 20:53:31 - WARNING: definitions.RegisterParams.software_version.example in body must be of type string: "number"
+2020/12/19 20:53:31 - WARNING: definitions.SessionStateObject.auth_time.example in body must be of type date: "float64"
+```
+
+The date was fixed to integer/int32 similar to other authorisation time instances.
+
+The swagger now passes validation.
+
+### generation
+
+```
+swagger generate client -f oxAuthModifiedApimaticOpenAPI20.yaml -A oxAuth 
+```
+
+```
+swagger generate client -f oxAuthModifiedApimaticOpenAPI20.yaml -A oxAuth \
+--additional-initialism=UMA   \
+--additional-initialism=FIDO  \
+--additional-initialism=UMA2  \
+--additional-initialism=FIDO2 \
+--additional-initialism=U2F   \
+--additional-initialism=JWK   \
+--additional-initialism=JWKS  
+```
+
+Then install dependencies
+```
+go get -u -f ./...
 ```
 
 
