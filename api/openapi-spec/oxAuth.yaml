@@ -1,8 +1,8 @@
 swagger: '2.0'
 info:
   version: '4.2'
-  title: jansAuth
-  description: jansAuth - OAuth 2.0 server; OpenID Connect Provider (OP) & UMA Authorization Server (AS)
+  title: oxAuth
+  description: oxAuth - OAuth 2.0 server; OpenID Connect Provider (OP) & UMA Authorization Server (AS)
   contact:
     email: yuriyz@gluu.org
 host: virtserver.swaggerhub.com
@@ -465,7 +465,7 @@ paths:
           schema:
             $ref: '#/definitions/ErrorResponse'
     put:
-      description: Update Client Metadata for a registered client.
+      description: Updates Client Metadata for a registered client.
       summary: put-register
       tags:
       - Registration
@@ -1909,13 +1909,13 @@ definitions:
         type: array
         items:
           type: string
-      'n':
+      n:
         type: string
       e:
         type: string
       x:
         type: string
-      'y':
+      y:
         type: string
     required:
     - kid
@@ -2135,19 +2135,19 @@ definitions:
       inum:
         description: XRI i-number
         type: string
-      jansAuthAppType:
-        description: jansAuth Appication type
+      oxAuthAppType:
+        description: oxAuth Appication type
         type: string
-      jansAuthIdTokenSignedResponseAlg:
-        description: jansAuth ID Token Signed Response Algorithm
+      oxAuthIdTokenSignedResponseAlg:
+        description: oxAuth ID Token Signed Response Algorithm
         type: string
-      jansAuthRedirectURI:
+      oxAuthRedirectURI:
         description: Array of redirect URIs values used in the Authorization
         type: array
         items:
           type: string
       oxId:
-        description: jansAuth Attribute Scope Id
+        description: oxAuth Attribute Scope Id
         type: string
       custom_attributes:
         type: array
@@ -2346,7 +2346,7 @@ definitions:
         type: string
       software_version:
         description: Specifies a version identifier string for the client software identified by 'software_id'. The value of the 'software_version' should change on any update to the client software identified by the same 'software_id'.
-        example: '2.1'
+        example: 2.1
         type: string
       software_statement:
         description: specifies a software statement containing client metadata values about the client software as claims. This is a string value containing the entire signed JWT.
@@ -2753,7 +2753,7 @@ definitions:
         type: string
       software_version:
         description: Specifies a version identifier string for the client software identified by 'software_id'. The value of the 'software_version' should change on any update to the client software identified by the same 'software_id'.
-        example: '2.1'
+        example: 2.1
         type: string
       software_statement:
         description: specifies a software statement containing client metadata values about the client software as claims. This is a string value containing the entire signed JWT.
@@ -2977,8 +2977,8 @@ definitions:
       auth_time:
         description: specifies the time at which session was authenticated.
         example: 100000000
-        type: integer
-        format: int32
+        type: string
+        format: date
       custom_state:
         type: string
   TokenResponse:
@@ -3260,7 +3260,7 @@ definitions:
     - keys
 tags:
 - name: developers
-  description: jansAuth is an open source OpenID Connect Provider (OP) and UMA Authorization Server (AS). The project also includes OpenID Connect Client code which can be used by websites to validate tokens.jansAuth currently implements all required aspects of the OpenID Connect stack, including an OAuth 2.0 authorization server, Simple Web Discovery, Dynamic Client Registration, JSON Web Tokens, JSON Web Keys, and User Info Endpoint.jansAuth is tightly coupled with oxTrust.
+  description: oxAuth is an open source OpenID Connect Provider (OP) and UMA Authorization Server (AS). The project also includes OpenID Connect Client code which can be used by websites to validate tokens.oxAuth currently implements all required aspects of the OpenID Connect stack, including an OAuth 2.0 authorization server, Simple Web Discovery, Dynamic Client Registration, JSON Web Tokens, JSON Web Keys, and User Info Endpoint.oxAuth is tightly coupled with oxTrust.
 - name: Authorization
   description: ''
 - name: Registration

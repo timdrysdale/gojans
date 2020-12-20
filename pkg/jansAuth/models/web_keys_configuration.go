@@ -16,12 +16,12 @@ import (
 
 // WebKeysConfiguration WebKeysConfiguration
 //
-// JSON Web Key Set (JWKS) - A JSON object that represents a set of JWKs. The JSON object MUST have a keys member, which is an array of JWKs.
+// JSON Web Key Set - A JSON object that represents a set of JWKs. The JSON object MUST have a keys member, which is an array of JWKs.
 //
 // swagger:model WebKeysConfiguration
 type WebKeysConfiguration struct {
 
-	// List of JSON Web Key (JWK) - A JSON object that represents a cryptographic key. The members of the object represent properties of the key, including its value.
+	// List of JWK - A JSON object that represents a cryptographic key. The members of the object represent properties of the key, including its value.
 	// Required: true
 	Keys []*JSONWebKey `json:"keys"`
 }

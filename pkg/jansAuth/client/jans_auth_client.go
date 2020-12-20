@@ -15,13 +15,13 @@ import (
 	"github.com/timdrysdale/gojans/pkg/jansAuth/client/client_registration"
 	"github.com/timdrysdale/gojans/pkg/jansAuth/client/fido2"
 	"github.com/timdrysdale/gojans/pkg/jansAuth/client/fido_u2f"
-	"github.com/timdrysdale/gojans/pkg/jansAuth/client/jwk_json_web_key_set_j_w_ks"
+	"github.com/timdrysdale/gojans/pkg/jansAuth/client/json_web_key_set"
 	"github.com/timdrysdale/gojans/pkg/jansAuth/client/registration"
 	"github.com/timdrysdale/gojans/pkg/jansAuth/client/server_configuration"
 	"github.com/timdrysdale/gojans/pkg/jansAuth/client/session_management"
 	"github.com/timdrysdale/gojans/pkg/jansAuth/client/token"
 	"github.com/timdrysdale/gojans/pkg/jansAuth/client/token_introspection"
-	"github.com/timdrysdale/gojans/pkg/jansAuth/client/uma_2_resource"
+	"github.com/timdrysdale/gojans/pkg/jansAuth/client/uma2_resource"
 	"github.com/timdrysdale/gojans/pkg/jansAuth/client/uma_scope"
 	"github.com/timdrysdale/gojans/pkg/jansAuth/client/uma_user_managed_access"
 	"github.com/timdrysdale/gojans/pkg/jansAuth/client/user_info"
@@ -74,13 +74,13 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) *JansAuth {
 	cli.ClientRegistration = client_registration.New(transport, formats)
 	cli.FIDO2 = fido2.New(transport, formats)
 	cli.FIDOU2F = fido_u2f.New(transport, formats)
-	cli.JWKJSONWebKeySetjwKs = jwk_json_web_key_set_j_w_ks.New(transport, formats)
+	cli.JSONWebKeySet = json_web_key_set.New(transport, formats)
 	cli.Registration = registration.New(transport, formats)
 	cli.ServerConfiguration = server_configuration.New(transport, formats)
 	cli.SessionManagement = session_management.New(transport, formats)
 	cli.Token = token.New(transport, formats)
 	cli.TokenIntrospection = token_introspection.New(transport, formats)
-	cli.UMA2Resource = uma_2_resource.New(transport, formats)
+	cli.UMA2Resource = uma2_resource.New(transport, formats)
 	cli.UMAScope = uma_scope.New(transport, formats)
 	cli.UMAUserManagedAccess = uma_user_managed_access.New(transport, formats)
 	cli.UserInfo = user_info.New(transport, formats)
@@ -138,7 +138,7 @@ type JansAuth struct {
 
 	FIDOU2F fido_u2f.ClientService
 
-	JWKJSONWebKeySetjwKs jwk_json_web_key_set_j_w_ks.ClientService
+	JSONWebKeySet json_web_key_set.ClientService
 
 	Registration registration.ClientService
 
@@ -150,7 +150,7 @@ type JansAuth struct {
 
 	TokenIntrospection token_introspection.ClientService
 
-	UMA2Resource uma_2_resource.ClientService
+	UMA2Resource uma2_resource.ClientService
 
 	UMAScope uma_scope.ClientService
 
@@ -169,7 +169,7 @@ func (c *JansAuth) SetTransport(transport runtime.ClientTransport) {
 	c.ClientRegistration.SetTransport(transport)
 	c.FIDO2.SetTransport(transport)
 	c.FIDOU2F.SetTransport(transport)
-	c.JWKJSONWebKeySetjwKs.SetTransport(transport)
+	c.JSONWebKeySet.SetTransport(transport)
 	c.Registration.SetTransport(transport)
 	c.ServerConfiguration.SetTransport(transport)
 	c.SessionManagement.SetTransport(transport)

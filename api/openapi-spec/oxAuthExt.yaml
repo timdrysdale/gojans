@@ -1,10 +1,103 @@
 swagger: '2.0'
 info:
   version: '4.2'
-  title: jansAuth
-  description: jansAuth - OAuth 2.0 server; OpenID Connect Provider (OP) & UMA Authorization Server (AS)
+  title: oxAuth
+  description: oxAuth - OAuth 2.0 server; OpenID Connect Provider (OP) & UMA Authorization Server (AS)
   contact:
     email: yuriyz@gluu.org
+  x-codegen-settings:
+    Nullify404: false
+    GenerateAsyncCode: true
+    UseMethodPrefix: true
+    UseModelPostfix: false
+    UseControllerPrefix: true
+    UseEnumPostfix: true
+    CollectParameters: false
+    UseConstructorsForConfig: false
+    UseCommonSDKLibrary: false
+    iOSUseAppInfoPlist: false
+    AndroidUseAppManifest: false
+    BodySerialization: 0
+    EnableAdditionalModelProperties: false
+    PreserveParameterOrder: true
+    AppendContentHeaders: true
+    iOSGenerateCoreData: false
+    GenerateInterfaces: false
+    NodeHttpClient: NODE_REQUEST
+    ValidateRequiredParameters: false
+    JavaUsePropertiesConfig: false
+    Timeout: 0
+    StoreTimezoneInformation: false
+    EnablePHPComposerVersionString: false
+    EnableLogging: false
+    ArraySerialization: Indexed
+    ModelSerializationScheme: Json
+    UseExceptionPrefix: true
+    RunscopeEnabled: false
+    AndroidHttpClient: ANDROID_OK
+    ObjCHttpClient: UNIREST
+    CSharpHttpClient: UNIREST
+    PHPHttpClient: UNIREST
+    JavaHttpClient: JAVA_OK
+    ParameterArrayFormat: ParamArrayWithIndex
+    SecurityProtocols:
+    - Ssl3
+    - Tls
+    GenerateTravisConfig: false
+    GenerateCircleConfig: false
+    GenerateAppveyorConfig: false
+    GenerateJenkinsConfig: false
+    EnableHttpCache: false
+    Retries: 0
+    RetryInterval: 1
+    GenerateAdvancedDocs: true
+    UnderscoreNumbers: true
+    UseSingletonPattern: true
+    DisableLinting: false
+    ApplyCustomizations: []
+    SortResources: false
+    AllowSkippingSSLCertVerification: false
+    DoNotSplitWords: []
+    EnableGlobalUserAgent: true
+    ReturnCompleteHttpResponse: false
+    GenerateModels: true
+    GenerateExceptions: true
+    IgnoreIfNullJson: false
+    DisableDocs: false
+    LiftParameterDescriptionFromCustomType: false
+    ThrowForHttpErrorStatusCodes: true
+    ResponseMapping:
+      Type: Simple
+    ForceKeywordArgsInRuby: false
+    SymbolizeHashKeysInRuby: false
+    UsageExampleEndpoint:
+      Description: ''
+      EndpointGroupName: ''
+      EndpointName: ''
+    IsLatestVersion: false
+    EnableImmutableModels: false
+    GenerateEnums: true
+    BackoffFactor: 0
+    UserConfigurableRetries: true
+    UseEndpointMethodName: false
+    EncodeTemplateParameters: true
+    GenerateExamplesForOptionalFields: false
+    MultitargetDotnetVersions: false
+  x-server-configuration:
+    default-environment: production
+    default-server: default
+    environments:
+    - name: production
+      description: SwaggerHub API Auto Mocking
+      servers:
+      - name: default
+        url: https://virtserver.swaggerhub.com/yuriyz1/oxauth/4.2
+    - name: environment2
+      servers:
+      - name: default
+        url: https://gluu.org/
+    parameters: []
+  x-image-uri: ''
 host: virtserver.swaggerhub.com
 basePath: /yuriyz1/oxauth/4.2
 schemes:
@@ -167,6 +260,12 @@ paths:
           description: Internal error occured. Please check log file for details.
           schema:
             $ref: '#/definitions/ErrorResponse'
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
     post:
       description: End-User Authentication and Authorization done by sending the User Agent to the Authorization Endpoint using request parameters defined by OAuth 2.0 and OpenID Connect.
       summary: post_authorize
@@ -316,6 +415,12 @@ paths:
           description: Internal error occured. Please check log file for details.
           schema:
             $ref: '#/definitions/ErrorResponse'
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
   /bc-authorize:
     post:
       description: The Backchannel Authentication Endpoint is used to initiate an out-of-band authentication of the end-user.
@@ -398,6 +503,12 @@ paths:
           description: Invalid details provided hence access denied.
           schema:
             $ref: '#/definitions/ErrorResponse'
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
   /bc-deviceRegistration:
     post:
       description: Performs backchannel device registration.
@@ -433,6 +544,12 @@ paths:
           description: Invalid details provided hence access denied.
           schema:
             $ref: '#/definitions/ErrorResponse'
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
   /register:
     post:
       description: The Client Registration Endpoint is an OAuth 2.0 Protected Resource through which a new Client registration can be requested.
@@ -464,8 +581,30 @@ paths:
           description: Internal error occured. Please check log file for details.
           schema:
             $ref: '#/definitions/ErrorResponse'
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /register
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          statusCode: 200
+          headers:
+            Content-Type: application/json
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Test post-register
+        x-testDescription: The Client Registration Endpoint is an OAuth 2.0 Protected Resource through which a new Client registration can be requested.
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
     put:
-      description: Update Client Metadata for a registered client.
+      description: Updates Client Metadata for a registered client.
       summary: put-register
       tags:
       - Registration
@@ -504,6 +643,12 @@ paths:
           description: Internal error occured. Please check log file for details.
           schema:
             $ref: '#/definitions/ErrorResponse'
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
     get:
       description: Get client information for a previously registered client.
       summary: get-register
@@ -542,6 +687,12 @@ paths:
           description: Internal error occured. Please check log file for details.
           schema:
             $ref: '#/definitions/ErrorResponse'
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
     delete:
       description: The Client Registration Endpoint removes the Client Metadata for a previously registered client.
       summary: delete-register
@@ -578,6 +729,12 @@ paths:
           description: Internal error occured. Please check log file for details.
           schema:
             $ref: '#/definitions/ErrorResponse'
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
   /clientinfo:
     get:
       description: The ClientInfo Endpoint is an OAuth 2.0 Protected Resource that returns Claims about the registered client.
@@ -609,6 +766,28 @@ paths:
           description: Invalid Request are provided to endpoint.
           schema:
             $ref: '#/definitions/ErrorResponse'
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /clientinfo
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          statusCode: 200
+          headers:
+            Content-Type: application/json
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Test get_clientinfo
+        x-testDescription: The ClientInfo Endpoint is an OAuth 2.0 Protected Resource that returns Claims about the registered client.
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
     post:
       description: The ClientInfo Endpoint is an OAuth 2.0 Protected Resource that returns Claims about the registered client.
       summary: post_clientinfo
@@ -641,6 +820,12 @@ paths:
           description: Invalid Request are provided to endpoint.
           schema:
             $ref: '#/definitions/ErrorResponse'
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
   /.well-known/gluu-configuration:
     post:
       description: Gets GluuServer configuration data that contains non-standard OpenID Connect discovery metadata.
@@ -662,6 +847,28 @@ paths:
           description: Internal error occured. Please check log file for details.
           schema:
             $ref: '#/definitions/ErrorResponse'
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /.well-known/gluu-configuration
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          statusCode: 200
+          headers:
+            Content-Type: application/json
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Test well-known-gluu-configuration
+        x-testDescription: Gets GluuServer configuration data that contains non-standard OpenID Connect discovery metadata.
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
   /introspection:
     get:
       description: The Introspection OAuth 2 Endpoint.
@@ -677,11 +884,13 @@ paths:
         in: header
         required: true
         type: string
+        x-example: Bearer 23410913-abewfq.123483
         description: Client Authorization details that contains the access token along with other details.
       - name: token
         in: query
         required: true
         type: string
+        x-example: token=2YotnFZFEjr1zCsicMWpAA
         description: ''
       - name: token_type_hint
         in: query
@@ -692,6 +901,7 @@ paths:
         in: query
         required: false
         type: boolean
+        x-example: false
         description: OPTIONAL. Boolean value with default value false. If true, returns introspection response as JWT (signed based on client configuration used for authentication to Introspection Endpoint).
       responses:
         200:
@@ -711,6 +921,30 @@ paths:
           description: Internal error occured. Please check log file for details.
           schema:
             $ref: '#/definitions/ErrorResponse'
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /introspection?token=token%3D2YotnFZFEjr1zCsicMWpAA
+          headers:
+            Authorization: Bearer 23410913-abewfq.123483
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          statusCode: 200
+          headers:
+            Content-Type: application/json
+        x-testShouldPass: true
+        x-testEnabled: false
+        x-testName: Test get-introspection
+        x-testDescription: The Introspection OAuth 2 Endpoint.
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
     post:
       description: The Introspection OAuth 2 Endpoint.
       summary: post-introspection
@@ -727,6 +961,7 @@ paths:
         in: header
         required: true
         type: string
+        x-example: Bearer 23410913-abewfq.123483
         description: Client Authorization details that contains the access token along with other details.
       - name: token
         in: formData
@@ -751,6 +986,12 @@ paths:
           description: Internal error occured. Please check log file for details.
           schema:
             $ref: '#/definitions/ErrorResponse'
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
   /revoke:
     post:
       description: Revoke an Access Token or a Refresh Token, the RP (Client).
@@ -778,12 +1019,19 @@ paths:
         200:
           description: OK
           schema:
+            x-is-dynamic: true
             type: object
           headers: {}
         400:
           description: Invalid parameters provided to endpoint.
           schema:
             $ref: '#/definitions/ErrorResponse'
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
   /token:
     post:
       description: To obtain an Access Token, an ID Token, and optionally a Refresh Token, the RP (Client).
@@ -903,12 +1151,18 @@ paths:
           description: Internal error occured. Please check log file for details.
           schema:
             $ref: '#/definitions/ErrorResponse'
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
   /jwks:
     get:
       description: Provides list of JWK used by server.
       summary: jwks
       tags:
-      - JSON Web Key Set
+      - JWK - JSON Web Key Set (JWKs)
       operationId: jwks
       deprecated: false
       produces:
@@ -924,6 +1178,28 @@ paths:
           description: Internal error occured. Please check log file for details.
           schema:
             $ref: '#/definitions/ErrorResponse'
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /jwks
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          statusCode: 200
+          headers:
+            Content-Type: application/json
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Test jwks
+        x-testDescription: Provides list of JWK used by server.
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
   /session_status:
     get:
       description: Determine current sesion status.
@@ -941,6 +1217,28 @@ paths:
           schema:
             $ref: '#/definitions/SessionStateObject'
           headers: {}
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /session_status
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          statusCode: 200
+          headers:
+            Content-Type: application/json
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Test session_status
+        x-testDescription: Determine current sesion status.
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
   /revoke_session:
     post:
       description: Revoke all sessions for user (requires revoke_session scope).
@@ -976,6 +1274,12 @@ paths:
           description: Internal error occured. Please check log file for details.
           schema:
             $ref: '#/definitions/ErrorResponse'
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
   /end_session:
     get:
       description: End current session.
@@ -1019,6 +1323,27 @@ paths:
           description: Internal error occured. Please check log file for details.
           schema:
             $ref: '#/definitions/ErrorResponse'
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /end_session
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          statusCode: 200
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Test end_session
+        x-testDescription: End current session.
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
   /uma/gather_claims:
     get:
       description: UMA Claims Gathering Endpoint.
@@ -1072,6 +1397,27 @@ paths:
           description: Invalid parameters provided to endpoint.
           schema:
             $ref: '#/definitions/ErrorResponse'
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /uma/gather_claims
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          statusCode: 200
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Test get-uma-gather_claims
+        x-testDescription: UMA Claims Gathering Endpoint.
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
     post:
       description: UMA Claims Gathering Endpoint
       summary: post-uma-gather_claims
@@ -1126,6 +1472,27 @@ paths:
           description: Invalid parameters provided to endpoint.
           schema:
             $ref: '#/definitions/ErrorResponse'
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /uma/gather_claims
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          statusCode: 200
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Test post-uma-gather_claims
+        x-testDescription: UMA Claims Gathering Endpoint
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
   /uma2-configuration:
     get:
       description: Gets UMA configuration data.
@@ -1147,6 +1514,28 @@ paths:
           description: Invalid parameters provided to endpoint.
           schema:
             $ref: '#/definitions/ErrorResponse'
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /uma2-configuration
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          statusCode: 200
+          headers:
+            Content-Type: application/json
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Test uma2-configuration
+        x-testDescription: Gets UMA configuration data.
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
   /host/rsrc_pr:
     post:
       description: Registers permission.
@@ -1194,12 +1583,18 @@ paths:
           description: Invalid parameters provided to endpoint.
           schema:
             $ref: '#/definitions/ErrorResponse'
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
   /host/rsrc/resource_set:
     post:
       description: Adds a new resource description.
       summary: post-host-rsrc-resource_set
       tags:
-      - UMA2 Resource
+      - UMA 2 Resource
       operationId: post-host-rsrc-resource_set
       deprecated: false
       produces:
@@ -1226,11 +1621,17 @@ paths:
           description: Invalid parameters provided to endpoint.
           schema:
             $ref: '#/definitions/ErrorResponse'
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
     put:
       description: Updates a previously registered resource.
       summary: put-host-rsrc-resource_set{rsid}
       tags:
-      - UMA2 Resource
+      - UMA 2 Resource
       operationId: put-host-rsrc-resource_set{rsid}
       deprecated: false
       produces:
@@ -1261,11 +1662,17 @@ paths:
           description: Invalid parameters provided to endpoint.
           schema:
             $ref: '#/definitions/ErrorResponse'
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
     get:
       description: Lists all previously registered resource.
       summary: get-host-rsrc-resource_set
       tags:
-      - UMA2 Resource
+      - UMA 2 Resource
       operationId: get-host-rsrc-resource_set
       deprecated: false
       produces:
@@ -1293,11 +1700,17 @@ paths:
           description: Invalid parameters provided to endpoint.
           schema:
             $ref: '#/definitions/ErrorResponse'
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
     delete:
       description: Deletes a previously registered resource.
       summary: delete-host-rsrc-resource_set
       tags:
-      - UMA2 Resource
+      - UMA 2 Resource
       operationId: delete-host-rsrc-resource_set
       deprecated: false
       produces:
@@ -1316,12 +1729,18 @@ paths:
           description: Invalid parameters provided to endpoint.
           schema:
             $ref: '#/definitions/ErrorResponse'
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
   /host/rsrc/resource_set/{rsid}:
     get:
       description: Reads a previously registered resource.
       summary: get-host-rsrc-resource_set/{rsid}
       tags:
-      - UMA2 Resource
+      - UMA 2 Resource
       operationId: get-host-rsrc-resource_set/{rsid}
       deprecated: false
       produces:
@@ -1347,6 +1766,12 @@ paths:
           description: Invalid parameters provided to endpoint.
           schema:
             $ref: '#/definitions/ErrorResponse'
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
   /rpt/status:
     get:
       description: The Introspection OAuth 2 Endpoint for RPT.
@@ -1387,6 +1812,12 @@ paths:
           description: Invalid parameters provided to endpoint.
           schema:
             $ref: '#/definitions/ErrorResponse'
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
     post:
       description: The Introspection OAuth 2 Endpoint for RPT.
       summary: post-rpt-status
@@ -1428,6 +1859,12 @@ paths:
           description: Invalid parameters provided to endpoint.
           schema:
             $ref: '#/definitions/ErrorResponse'
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
   /uma/scopes:
     get:
       description: Provides UMA Scope description by scope id.
@@ -1453,6 +1890,12 @@ paths:
           description: Invalid parameters provided to endpoint.
           schema:
             $ref: '#/definitions/ErrorResponse'
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
   /userinfo:
     get:
       description: Returns Claims about the authenticated End-User.
@@ -1478,6 +1921,7 @@ paths:
         200:
           description: OK
           schema:
+            x-is-dynamic: true
             type: object
           headers: {}
         400:
@@ -1496,6 +1940,12 @@ paths:
           description: Internal error occured. Please check log file for details.
           schema:
             $ref: '#/definitions/ErrorResponse'
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
     post:
       description: Returns Claims about the authenticated End-User.
       summary: post-userinfo
@@ -1522,6 +1972,7 @@ paths:
         200:
           description: OK
           schema:
+            x-is-dynamic: true
             type: object
           headers: {}
         400:
@@ -1540,6 +1991,12 @@ paths:
           description: Internal error occured. Please check log file for details.
           schema:
             $ref: '#/definitions/ErrorResponse'
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
   /fido/u2f/authentication:
     get:
       description: Performs FIDO U2F authentication of end-user.
@@ -1589,6 +2046,12 @@ paths:
           description: Invalid parameters provided to endpoint.
           schema:
             $ref: '#/definitions/ErrorResponse'
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
     post:
       description: Performs FIDO U2F authentication of end-user.
       summary: post-fido-u2f-authentication
@@ -1619,6 +2082,28 @@ paths:
           description: Invalid parameters provided to endpoint.
           schema:
             $ref: '#/definitions/ErrorResponse'
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /fido/u2f/authentication
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          statusCode: 200
+          headers:
+            Content-Type: application/json
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Test post-fido-u2f-authentication
+        x-testDescription: Performs FIDO U2F authentication of end-user.
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
   /fido-configuration:
     get:
       description: Performs FIDO configuration data.
@@ -1644,6 +2129,28 @@ paths:
           description: Invalid parameters provided to endpoint.
           schema:
             $ref: '#/definitions/ErrorResponse'
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /fido-configuration
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          statusCode: 200
+          headers:
+            Content-Type: application/json
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Test fido-configuration
+        x-testDescription: Performs FIDO configuration data.
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
   /fido/u2f/registration:
     get:
       description: U2F device registration.
@@ -1693,6 +2200,12 @@ paths:
           description: Invalid parameters provided to endpoint.
           schema:
             $ref: '#/definitions/ErrorResponse'
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
     post:
       description: U2F device registration.
       summary: post-fido-u2f-registration
@@ -1727,6 +2240,28 @@ paths:
           description: Invalid parameters provided to endpoint.
           schema:
             $ref: '#/definitions/ErrorResponse'
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /fido/u2f/registration
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          statusCode: 200
+          headers:
+            Content-Type: application/json
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Test post-fido-u2f-registration
+        x-testDescription: U2F device registration.
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
   /fido2/configuration:
     get:
       description: FIDO2 configuration
@@ -1756,6 +2291,28 @@ paths:
           description: Internal error occured. Please check log file for details.
           schema:
             $ref: '#/definitions/ErrorResponse'
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /fido2/configuration
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          statusCode: 200
+          headers:
+            Content-Type: application/json
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Test get-fido2-configuration
+        x-testDescription: FIDO2 configuration
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
   /fido2/assertion/options:
     post:
       description: FIDO2 Assertion Options
@@ -1787,6 +2344,28 @@ paths:
           description: Internal error occured. Please check log file for details.
           schema:
             $ref: '#/definitions/ErrorResponse'
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /fido2/assertion/options
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          statusCode: 200
+          headers:
+            Content-Type: application/json
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Test options
+        x-testDescription: FIDO2 Assertion Options
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
   /fido2/assertion/result:
     post:
       description: FIDO2 Assertion Result.
@@ -1816,6 +2395,27 @@ paths:
           description: Internal error occured. Please check log file for details.
           schema:
             $ref: '#/definitions/ErrorResponse'
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /fido2/assertion/result
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          statusCode: 200
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Test result
+        x-testDescription: FIDO2 Assertion Result.
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
   /fido2/attestation/options:
     post:
       description: Created new registration.
@@ -1847,6 +2447,28 @@ paths:
           description: Internal error occured. Please check log file for details.
           schema:
             $ref: '#/definitions/ErrorResponse'
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /fido2/attestation/options
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          statusCode: 200
+          headers:
+            Content-Type: application/json
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Test attestation-options
+        x-testDescription: Created new registration.
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
   /fido2/attestation/result:
     post:
       description: FIDO2 attestation result
@@ -1874,6 +2496,28 @@ paths:
           description: Internal error occured. Please check log file for details.
           schema:
             $ref: '#/definitions/ErrorResponse'
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /fido2/attestation/result
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          statusCode: 200
+          headers:
+            Content-Type: application/json
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Test attestation-result
+        x-testDescription: FIDO2 attestation result
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
 definitions:
   ErrorResponse:
     title: ErrorResponse
@@ -1909,13 +2553,13 @@ definitions:
         type: array
         items:
           type: string
-      'n':
+      n:
         type: string
       e:
         type: string
       x:
         type: string
-      'y':
+      y:
         type: string
     required:
     - kid
@@ -2135,19 +2779,19 @@ definitions:
       inum:
         description: XRI i-number
         type: string
-      jansAuthAppType:
-        description: jansAuth Application type
+      oxAuthAppType:
+        description: oxAuth Appication type
         type: string
-      jansAuthIdTokenSignedResponseAlg:
-        description: jansAuth ID Token Signed Response Algorithm
+      oxAuthIdTokenSignedResponseAlg:
+        description: oxAuth ID Token Signed Response Algorithm
         type: string
-      jansAuthRedirectURI:
+      oxAuthRedirectURI:
         description: Array of redirect URIs values used in the Authorization
         type: array
         items:
           type: string
       oxId:
-        description: jansAuth Attribute Scope Id
+        description: oxAuth Attribute Scope Id
         type: string
       custom_attributes:
         type: array
@@ -2346,7 +2990,7 @@ definitions:
         type: string
       software_version:
         description: Specifies a version identifier string for the client software identified by 'software_id'. The value of the 'software_version' should change on any update to the client software identified by the same 'software_id'.
-        example: '2.1'
+        example: 2.1
         type: string
       software_statement:
         description: specifies a software statement containing client metadata values about the client software as claims. This is a string value containing the entire signed JWT.
@@ -2753,7 +3397,7 @@ definitions:
         type: string
       software_version:
         description: Specifies a version identifier string for the client software identified by 'software_id'. The value of the 'software_version' should change on any update to the client software identified by the same 'software_id'.
-        example: '2.1'
+        example: 2.1
         type: string
       software_statement:
         description: specifies a software statement containing client metadata values about the client software as claims. This is a string value containing the entire signed JWT.
@@ -2977,8 +3621,8 @@ definitions:
       auth_time:
         description: specifies the time at which session was authenticated.
         example: 100000000
-        type: integer
-        format: int32
+        type: string
+        format: date
       custom_state:
         type: string
   TokenResponse:
@@ -3248,11 +3892,11 @@ definitions:
     - displayName
   WebKeysConfiguration:
     title: WebKeysConfiguration
-    description: JSON Web Key Set - A JSON object that represents a set of JWKs. The JSON object MUST have a keys member, which is an array of JWKs.
+    description: JSON Web Key Set (JWKS) - A JSON object that represents a set of JWKs. The JSON object MUST have a keys member, which is an array of JWKs.
     type: object
     properties:
       keys:
-        description: List of JWK - A JSON object that represents a cryptographic key. The members of the object represent properties of the key, including its value.
+        description: List of JSON Web Key (JWK) - A JSON object that represents a cryptographic key. The members of the object represent properties of the key, including its value.
         type: array
         items:
           $ref: '#/definitions/JsonWebKey'
@@ -3260,7 +3904,7 @@ definitions:
     - keys
 tags:
 - name: developers
-  description: jansAuth is an open source OpenID Connect Provider (OP) and UMA Authorization Server (AS). The project also includes OpenID Connect Client code which can be used by websites to validate tokens.jansAuth currently implements all required aspects of the OpenID Connect stack, including an OAuth 2.0 authorization server, Simple Web Discovery, Dynamic Client Registration, JSON Web Tokens, JSON Web Keys, and User Info Endpoint.jansAuth is tightly coupled with oxTrust.
+  description: oxAuth is an open source OpenID Connect Provider (OP) and UMA Authorization Server (AS). The project also includes OpenID Connect Client code which can be used by websites to validate tokens.oxAuth currently implements all required aspects of the OpenID Connect stack, including an OAuth 2.0 authorization server, Simple Web Discovery, Dynamic Client Registration, JSON Web Tokens, JSON Web Keys, and User Info Endpoint.oxAuth is tightly coupled with oxTrust.
 - name: Authorization
   description: ''
 - name: Registration
@@ -3271,15 +3915,15 @@ tags:
   description: ''
 - name: Token
   description: ''
-- name: JWKS
+- name: JWK - JSON Web Key Set (JWKs)
   description: ''
 - name: Client Registration
   description: ''
 - name: Session Management
   description: ''
-- name: UMA 
+- name: UMA (User Managed Access)
   description: ''
-- name: UMA2 Resource
+- name: UMA 2 Resource
   description: ''
 - name: Token Introspection
   description: ''

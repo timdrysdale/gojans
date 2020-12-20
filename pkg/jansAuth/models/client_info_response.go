@@ -26,7 +26,7 @@ type ClientInfoResponse struct {
 	// XRI i-number
 	Inum string `json:"inum,omitempty"`
 
-	// jansAuth Appication type
+	// jansAuth Application type
 	JansAuthAppType string `json:"jansAuthAppType,omitempty"`
 
 	// jansAuth ID Token Signed Response Algorithm
