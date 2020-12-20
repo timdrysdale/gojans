@@ -1,8 +1,14 @@
-# jansAuth swagger
+# jansAuth openapi-spec
 
-The openAPI3.0 spec for the ```jans-auth``` server which is the same as for the oxAuth server in the Gluu project.
+The openAPI3.0 spec for the ```jans-auth``` server is the same as for the oxAuth server in the Gluu project. 
+This required some conversion (to swagger 2.0) and some editing (to fix some inconsistencies). Files in this directory include:
 
-This required some conversion (to swagger 2.0) and some editing (to fix some inconsistencies).
+`oxAuthExt.yaml` - openAPI2.0/swagger2.0 spec with extensions included
+`oxAuth.yaml` - openAPI2.0/swagger2.0 spec
+`jansAuth3.yaml` - openapi3.0 spec
+`jansAuth.yaml` - openapi2.0 spec, hand edited, used for generating the code in `pkg`
+
+
 
 ## openAPI3.0 and golang
 
