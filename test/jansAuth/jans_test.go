@@ -8,5 +8,4 @@ import (
 func TestPrintln(t *testing.T) {
 	fmt.Println("test")
 
-	THIS IS A BIG BANANA
 }

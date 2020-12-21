@@ -50,6 +50,16 @@ The `swagger` files are in `./api/openapi-spec`. The client adapter code is in `
         └── models
 ```
 
+## CI
+
+You can pre-run the linting with 
+
+```
+golangci-lint run ./...  
+```
+
+Using `act` may fail on your local machine due to cgo dependencies.
+
 
 ## Mocking / Testing
 
